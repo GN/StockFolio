@@ -6,7 +6,7 @@ import Navbar from "./components/partials/navbar";
 import Logout from "./components/logout";
 import Dashboard from './components/dashboard';
 import {getSession} from "./actions/session";
-import SideCSS from "./side.css"
+import ManagerOverview from "./components/manager/overview"
 
 class App extends Component{
     constructor(props) {
@@ -40,7 +40,7 @@ class App extends Component{
                     <Route exact path='/' component={Index} />
                     <Route exact path='/login' render={(props) => <Login logIn={this.logIn} session={this.state.activeSession}/> }/>
                     <Route exact path='/logout' render={(props) => <Logout logOut={this.logOut}/>} />
-                    <Route exact path='/dashboard' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} />}/>
+                    <Route exact path='/dashboard' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Manager Overview"} content={<ManagerOverview/>}/>}/>
                 </Switch>
             </Router>
         );

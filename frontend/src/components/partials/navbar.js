@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
-import { Navbar } from "react-bootstrap";
+import { Navbar, NavDropdown, Nav } from "react-bootstrap";
 
 class navbar extends React.Component{
     constructor(props) {
@@ -13,10 +13,10 @@ class navbar extends React.Component{
 
     render() {
         const loggedIn = (
-            <Navbar.Text>
-                Signed in as: <a>{this.props.name}</a>
-                <p><Link to='/logout'>Logout</Link></p>
-            </Navbar.Text>
+            <NavDropdown href="" title={this.props.name} id="basic-nav-dropdown">
+                <NavDropdown.Item href=""><Link to='/logout'>Logout</Link></NavDropdown.Item>
+                <NavDropdown.Item href=""><Link to='/dashboard'>Dashboard</Link></NavDropdown.Item>
+            </NavDropdown>
         );
         const notLoggedIn = (
             <Navbar.Text>
@@ -26,11 +26,10 @@ class navbar extends React.Component{
 
         return(
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand><Link to='/'>StockFolio</Link></Navbar.Brand>
-                <Navbar.Toggle />
-                <Navbar.Collapse className="justify-content-end">
-                    {this.props.activeSession ? loggedIn : notLoggedIn}
-                </Navbar.Collapse>
+                <Navbar.Brand href="#home">StockFolio</Navbar.Brand>
+                <Nav className="mr-auto">
+                </Nav>
+                {this.props.activeSession ? loggedIn : notLoggedIn}
             </Navbar>
         )
     }

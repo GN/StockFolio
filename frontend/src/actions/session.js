@@ -14,7 +14,7 @@ export const getSession = () => {
             email: decode.email,
             accountType: decode.accountType
         };
-        console.log(session);
+        //console.log(session);
         return session;
     } catch(err){
         console.log(err);
