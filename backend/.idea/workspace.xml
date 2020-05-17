@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c032a87d-0aa0-4427-a86f-ba61aecc2021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/manager/availablestocks.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/manager/managecustomer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/manager/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/manager/overview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/linechart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/sidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../package-lock.json" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
