@@ -26,7 +26,7 @@ class navbar extends React.Component{
 
         return(
             <Navbar bg="dark" variant="dark">
-                <Navbar.Brand href="#home">StockFolio</Navbar.Brand>
+                <Navbar.Brand href="/">StockFolio</Navbar.Brand>
                 <Nav className="mr-auto">
                 </Nav>
                 {this.props.activeSession ? loggedIn : notLoggedIn}

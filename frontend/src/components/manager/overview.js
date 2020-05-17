@@ -1,8 +1,10 @@
 import React, {Component} from "react";
-import {ListGroup, Form, Button} from "react-bootstrap";
+import {Form, Button} from "react-bootstrap";
 import axios from 'axios';
 import {getSession} from '../../actions/session';
 import Linechart from "../partials/linechart";
+import { MDBDataTable } from 'mdbreact';
+
 
 class managerOverview extends Component {
     constructor(props) {
@@ -10,9 +12,8 @@ class managerOverview extends Component {
         this.state = {
             ticker: "",
             currentStocks: [],
-        }
-        this.onClick = this.viewStock.bind(this);
-
+            clickTicker: null
+        };
     }
 
     onChange = e => {
@@ -22,12 +23,22 @@ class managerOverview extends Component {
     getStocks() {
         axios.get('/api/manager/GetCurrentAvailable', {params: {'email': getSession().email}})
             .then((response) =>{
-                this.setState({currentStocks: response.data});
+
+                let stocks = [];
+                var self = this;
+
+                response.data.forEach(function(d){
+                    let deleteBtn = <Button variant="danger" id={d} onClick={self.deleteStock}>Delete</Button>;
+                    let detailsBtn = <Button variant="success" id={d} onClick={self.setClickTicker}>View Stock Detail</Button>;
+                    stocks.push({symbol: d, edit: 'edit', delete: deleteBtn, viewDetails: detailsBtn})
+                });
+
+                this.setState({currentStocks: stocks});
             });
     };
 
     addStock() {
-        axios.post('/api/manager/AddAvailableStock', {email: getSession().email, ticker: this.state.ticker})
+        axios.post('/api/manager/AddAvailableStock', {email: getSession().email, ticker: this.state.ticker.toUpperCase()})
             .then((response) => {
                 if(response.status === 200){
                     this.getStocks();
@@ -35,37 +46,73 @@ class managerOverview extends Component {
             })
     };
 
-    viewStock(e){
-        e.preventDefault();
-        console.log(e.target.id);
-        this.setState({ticker: e.target.id});
-        console.log('ticker' + this.state.ticker);
-
+    setClickTicker = (e) =>{
+        console.log('Old Ticker: ' + this.state.clickTicker);
+        this.setState({ clickTicker: e.target.id },() => {
+            console.log("New Ticker: " + this.state.clickTicker);
+        });
     };
 
+    deleteStock = (e) => {
+
+        console.log("Stock to delete: " + e.target.id);
+
+        axios.post('/api/manager/RemoveStock', {email: getSession().email, ticker: e.target.id})
+            .then((response) => {
+                if(response.status === 200){
+                    this.getStocks();
+                }
+            })
+    };
 
     componentDidMount(){
         this.getStocks();
     }
 
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        console.log(prevProps);
+        console.log(prevState);
+        console.log(snapshot);
+    }
+
     render() {
+        const data = {
+            columns: [
+                {
+                    label: 'Symbol',
+                    field: 'symbol',
+                    sort: 'asc',
+                    width: 150
+                },
+                {
+                    label: 'Delete',
+                    field: 'delete',
+                    width: 150
+                },
+                {
+                    label: 'View Details',
+                    field: 'viewDetails',
+                    width: 150
+                }
+            ],
+            rows: this.state.currentStocks
+        };
         return(
             <>
-
                 <div>
-                    <p>Here is a list of your current holdings and available statistics regarding them:</p>
-                    <ListGroup id="stocks">
-                        {this.state.currentStocks.map(stock => (
-                            <ListGroup.Item key={stock} id={stock} onClick={this.viewStock}>
-                                {stock}
-                            </ListGroup.Item>
-                        ))}
-                    </ListGroup>
+                    <p>Quick View Your Managed Stocks:</p>
+                        <MDBDataTable
+                            striped
+                            bordered
+                            small
+                            data={data}
+                        />
+
                 </div>
                 <div>
                     <Form className={"pt-5"} onSubmit={() => this.addStock()}>
-                        <Form.Group controlId="ticker" onChange={() => this.onChange()} value={this.state.ticker}>
-                            <Form.Label>Quick Add New Stock</Form.Label>
+                        <Form.Group controlId="ticker" onChange={this.onChange} value={this.state.ticker}>
+                            <Form.Label>Add New Stock</Form.Label>
                             <Form.Control type="tickerBox" placeholder="GOOG" />
                             <Form.Text className="text-muted">
                             </Form.Text>
@@ -76,9 +123,9 @@ class managerOverview extends Component {
                     </Form>
                 </div>
 
-                <div className={"pt-5"} id='chart'>
-                    <Linechart ticker={this.state.ticker}/>
-                </div>
+                    <div className={"pt-5"} id='chart'>
+                        <Linechart ticker={this.state.clickTicker} key={this.state.clickTicker} />
+                    </div>
             </>
         );
     }

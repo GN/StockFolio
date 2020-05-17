@@ -2,50 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c032a87d-0aa0-4427-a86f-ba61aecc2021" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/frontend.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/logo192.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/logo512.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/public/robots.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/actions/session.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/dashboard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/login.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/logout.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/partials/navbar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/components/partials/sidebar.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/serviceWorker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/setupTests.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/side.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/manager/availablestocks.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/components/manager/managecustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/bin/www" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/customer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/manager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/stock.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/stock.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api/manager.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/manager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/manager/overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/manager/overview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/linechart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/linechart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/components/partials/sidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/partials/sidebar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +29,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1bsIYjh12FHw71XOZvvw0GoDZn0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -105,7 +79,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589414423394</updated>
-      <workItem from="1589414424543" duration="29929000" />
+      <workItem from="1589414424543" duration="41452000" />
     </task>
     <servers />
   </component>
@@ -132,22 +106,22 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="302" width="424" height="528" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1589494103792" />
-    <state width="1897" height="275" key="GridCell.Tab.0.bottom" timestamp="1589504134790">
+    <state width="1897" height="275" key="GridCell.Tab.0.bottom" timestamp="1589694733058">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1589504134790" />
-    <state width="1897" height="275" key="GridCell.Tab.0.center" timestamp="1589504134790">
+    <state width="1897" height="275" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1589694733058" />
+    <state width="1897" height="275" key="GridCell.Tab.0.center" timestamp="1589694733057">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1589504134790" />
-    <state width="1897" height="275" key="GridCell.Tab.0.left" timestamp="1589504134790">
+    <state width="1897" height="275" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1589694733057" />
+    <state width="1897" height="275" key="GridCell.Tab.0.left" timestamp="1589694733056">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1589504134790" />
-    <state width="1897" height="275" key="GridCell.Tab.0.right" timestamp="1589504134790">
+    <state width="1897" height="275" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1589694733056" />
+    <state width="1897" height="275" key="GridCell.Tab.0.right" timestamp="1589694733058">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1897" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1589504134790" />
+    <state width="1897" height="275" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1589694733058" />
     <state width="1897" height="340" key="GridCell.Tab.1.bottom" timestamp="1589504091359">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

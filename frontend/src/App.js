@@ -7,6 +7,7 @@ import Logout from "./components/logout";
 import Dashboard from './components/dashboard';
 import {getSession} from "./actions/session";
 import ManagerOverview from "./components/manager/overview"
+import Managecustomer from "./components/manager/managecustomer";
 
 class App extends Component{
     constructor(props) {
@@ -41,6 +42,8 @@ class App extends Component{
                     <Route exact path='/login' render={(props) => <Login logIn={this.logIn} session={this.state.activeSession}/> }/>
                     <Route exact path='/logout' render={(props) => <Logout logOut={this.logOut}/>} />
                     <Route exact path='/dashboard' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Manager Overview"} content={<ManagerOverview/>}/>}/>
+                    {/*<Route exact path='/dashboard/managestocks' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={'Available Stock Overview'} content={<Availablestocks/>}/>}/>*/}
+                    <Route exact path='/dashboard/managecustomers' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Customer Management Overview"} content={<Managecustomer/>}/>}/>
                 </Switch>
             </Router>
         );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Redirect} from "react-router-dom";
+import {Redirect, Link} from "react-router-dom";
 
 class sidebar extends React.Component{
 
@@ -8,9 +8,9 @@ class sidebar extends React.Component{
         const managerSidebar = (
             <div className="bg-light border-right" id="sidebar-wrapper">
                 <div className="list-group list-group-flush">
-                    <a href="#" className="list-group-item list-group-item-action bg-light">Overview</a>
-                    <a href="#" className="list-group-item list-group-item-action bg-light">Manage Available Stocks</a>
-                    <a href="#" className="list-group-item list-group-item-action bg-light">Manage Customer</a>
+                    <Link to='/dashboard'><a className="list-group-item list-group-item-action bg-light">Overview</a></Link>
+                    {/*<a href="#" className="list-group-item list-group-item-action bg-light"><Link to='/dashboard/managestocks'>Manage Available Stocks</Link></a>*/}
+                    <Link to='/dashboard/managecustomers'><a className="list-group-item list-group-item-action bg-light">Manage Customer</a></Link>
                 </div>
             </div>
 
