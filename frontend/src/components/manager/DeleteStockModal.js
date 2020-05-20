@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import axios from 'axios';
 
@@ -32,20 +32,9 @@ class DeleteStockModal extends React.Component {
         this.setState({showModal: myBool})
     }
 
-    // addStock(){
-    //     axios.post('/api/manager/AddStockToCustomerPortfolio', {ticker: this.props.stock, squantity: this.state.shares, price: this.state.price, customerEmail: this.props.email}).then((response) => {
-    //         if(response.status === 200){
-    //             console.log(response.data);
-    //             this.showModal(false);
-    //         }
-    //     });
-    // }
-
     getStock(){
         axios.get('/api/manager/GetStock', {params: {id: this.props.stockId}}).then((response) => {
             if(response.status === 200){
-                console.log("get stock:");
-                console.log(response.data);
                 this.setState({id: response.data._id, stock: response.data.symbol, shares: response.data.quantity, purchasePrice: response.data.price})
             }
         });

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Index from './components/index'
 import Login from './components/login'
 import Navbar from "./components/partials/navbar";
@@ -9,6 +9,8 @@ import {getSession} from "./actions/session";
 import ManagerOverview from "./components/manager/overview"
 import Managecustomer from "./components/manager/managecustomer";
 import Editcustomer from "./components/manager/editcustomer";
+import Register from "./components/register";
+import CustomerOverview from "./components/customer/overview";
 
 class App extends Component{
     constructor(props) {
@@ -41,9 +43,9 @@ class App extends Component{
                 <Switch>
                     <Route exact path='/' component={Index} />
                     <Route exact path='/login' render={(props) => <Login logIn={this.logIn} session={this.state.activeSession}/> }/>
+                    <Route exact path='/register' render={(props) => <Register logIn={this.logIn} session={this.state.activeSession}/> }/>
                     <Route exact path='/logout' render={(props) => <Logout logOut={this.logOut}/>} />
-                    <Route exact path='/dashboard' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Manager Overview"} content={<ManagerOverview/>}/>}/>
-                    {/*<Route exact path='/dashboard/managestocks' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={'Available Stock Overview'} content={<Availablestocks/>}/>}/>*/}
+                    <Route exact path='/dashboard' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={ this.state.accountType === 'Manager' ? "Manager Overview": "Customer Overview" } content={ this.state.accountType === 'Manager' ? <ManagerOverview/> : <CustomerOverview/>} />}/>
                     <Route exact path='/dashboard/managecustomers' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Customer Management Overview"} content={<Managecustomer/>}/>}/>
                     <Route path='/dashboard/managecustomers/edit' render={(props) => <Dashboard activeSession={this.state.activeSession} accountType={this.state.accountType} title={"Customer Management Overview"} content={<Editcustomer/>}/>}/>
 

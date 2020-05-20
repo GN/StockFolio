@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Modal, Button, Form, InputGroup, FormControl } from "react-bootstrap";
 import axios from 'axios';
 
@@ -17,7 +17,6 @@ class AddStockModal extends React.Component {
     getStockPrice(stock) {
         axios.get('https://cloud.iexapis.com/stable/stock/' + stock + '/batch?types=quote,news,chart&range=1m&last=10&token=pk_bf815fd81abf4a2da1d43edd6dc5f9ad')
             .then((response) => {
-                console.log(response.data.quote.latestPrice);
                 return response.data.quote.latestPrice;
             });
     }

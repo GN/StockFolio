@@ -19,7 +19,6 @@ class Managecustomer extends React.Component{
         axios.get('/api/manager/GetCustomers', {params: {email: getSession().email}})
             .then((response) => {
                 let cust = [];
-                var self = this;
                 response.data[0].customerObjects.forEach(function(customer){
                     let button = <Link to={`/dashboard/managecustomers/edit?email=${customer.email}`}><Button id={customer.email} variant="warning" >Edit Portfolio</Button></Link>;
                     cust.push({customerName: customer.name, customerEmail: customer.email, editCustomer: button})

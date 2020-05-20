@@ -1,9 +1,8 @@
 import React from "react";
-import {useState} from 'react';
 import {MDBDataTable} from "mdbreact";
 import axios from "axios";
 import {getSession} from "../../actions/session";
-import {Button, Modal} from "react-bootstrap";
+import {Button} from "react-bootstrap";
 import AddStockModal from './AddStockModal'
 import DeleteStockModal from "./DeleteStockModal";
 
@@ -14,7 +13,8 @@ class Editcustomer extends React.Component{
 
         this.state = {
             customerData: [],
-            availableStockData: []
+            availableStockData: [],
+            customerName: ''
         }
     }
 
@@ -29,8 +29,6 @@ class Editcustomer extends React.Component{
             .then((response) =>{
 
                 let query = this.useQuery();
-                console.log(query.get('email'));
-
                 let stocks = [];
                 var self = this;
 
@@ -54,25 +52,32 @@ class Editcustomer extends React.Component{
         axios.get('/api/manager/GetCustomerPortfolio', {params: {'email': query.get('email')}})
             .then((response) => {
                 response.data.forEach(function(stock){
-
                     let editBtn = <DeleteStockModal stockId={stock._id} updateCustomerState={self.updateCustomerState}/>;
-
-
                     stockPortfolio.push({companyName: stock.symbol, numberOfShares: stock.quantity, purchasePrice: stock.price, viewStockDetails: "test", editOrRemove: editBtn})
                 });
                 this.setState({customerData: stockPortfolio})
             });
     }
 
+    getCustomerName(){
+        let query = this.useQuery();
+        axios.get('/api/manager/GetCustomerName', {params: {'email': query.get('email')}})
+            .then((response) => {
+                this.setState({customerName: response.data})
+            });
+    }
 
     updateCustomerState = () => {
         this.getCustomerPortfolio();
+        this.getCustomerName();
     };
 
 
     componentDidMount() {
         this.getStocks();
         this.getCustomerPortfolio();
+        this.getCustomerName();
+
     }
 
 
@@ -136,7 +141,7 @@ class Editcustomer extends React.Component{
 
         return (
             <>
-                <h2 className={"pt-5"}>Portfolio for:  {this.state.customerData.name}</h2>
+                <h2 className={"pt-5"}>Portfolio for:  {this.state.customerName}</h2>
                 <MDBDataTable id='customerPortfolioTable' entriesOptions={[3, 5, 10, 15, 20]} entries={3}
                     striped
                     bordered
