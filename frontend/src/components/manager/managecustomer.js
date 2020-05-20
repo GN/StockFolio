@@ -3,6 +3,8 @@ import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
 import {getSession} from "../../actions/session";
 import {Button} from "react-bootstrap";
+import {Link} from "react-router-dom";
+
 
 class Managecustomer extends React.Component{
 
@@ -19,7 +21,7 @@ class Managecustomer extends React.Component{
                 let cust = [];
                 var self = this;
                 response.data[0].customerObjects.forEach(function(customer){
-                    let button = <Button id={customer.email} variant="warning" onClick={self.editCustomer}>Edit Portfolio</Button>;
+                    let button = <Link to={`/dashboard/managecustomers/edit?email=${customer.email}`}><Button id={customer.email} variant="warning" >Edit Portfolio</Button></Link>;
                     cust.push({customerName: customer.name, customerEmail: customer.email, editCustomer: button})
                 });
                 this.setState({customers: cust});
@@ -31,7 +33,8 @@ class Managecustomer extends React.Component{
         this.getCustomers();
     }
 
-    editCustomer(){}
+    editCustomer = (e) => {
+    };
 
     render() {
         const data = {

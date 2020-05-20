@@ -11,9 +11,14 @@ class dashboard extends React.Component{
             activeSession: this.props.activeSession
         }
     }
+    componentDidMount() {
+        // console.log('Props: ' + this.props.location.search); // "?filter=top&origin=im"
+    }
 
 
     render() {
+
+
         if(this.state.activeSession){
             return(
                 <div className="d-flex" id="wrapper">

@@ -46,7 +46,7 @@ class managerOverview extends Component {
             })
     };
 
-    setClickTicker = (e) =>{
+    setClickTicker = (e) => {
         console.log('Old Ticker: ' + this.state.clickTicker);
         this.setState({ clickTicker: e.target.id },() => {
             console.log("New Ticker: " + this.state.clickTicker);
