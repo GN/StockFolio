@@ -63,6 +63,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/stocks', function (err) {
 
 const PORT = process.env.PORT || 5000;
 
-server.listen(5000);
+server.listen(PORT);
 
 module.exports = server;

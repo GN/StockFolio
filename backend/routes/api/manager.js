@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-const ObjectId = require('mongoose').Types.ObjectId;
 const Stock = require('../../models/stock');
 const {customer, manager} = require('../../models/users');
 
@@ -46,8 +45,6 @@ router.post('/RemoveStock', function (req, res, next) {
 });
 
 router.post('/AddStockToCustomerPortfolio', function (req, res, next) {
-
-
     let newStock = new Stock({
         owner: req.body.customerEmail,
         symbol: req.body.ticker,
@@ -55,18 +52,6 @@ router.post('/AddStockToCustomerPortfolio', function (req, res, next) {
         price: req.body.price
     });
     console.log(newStock);
-    // customer.findOneAndUpdate({email: req.body.customerEmail},  {
-    //     '$push': {'portfolio': newStock}
-    // }, function (err, model) {
-    //     if(err){
-    //         return res.send(err);
-    //     }
-    //     else{
-    //         //console.log('added stock!' + model);
-    //         return res.json(model);
-    //     }
-    // });
-
     newStock.save().then(stock => res.json(stock)).catch(err => console.log(err))
 });
 
@@ -96,25 +81,14 @@ router.get('/GetCustomers', function (req, res, next) {
 
 
 router.get('/GetCustomerPortfolio', function (req, res, next) {
-    // customer.findOne({email: req.query.email}, function (err, account) {
-    //     //console.log("Get Customer Portfolio" + account);
-    //     return res.json(account.portfolio);
-    // });
-    //
-
     Stock.find({owner: req.query.email}, function(err, stocks){
-       return res.json(stocks);
+        return res.json(stocks);
     });
 
 });
 
 router.post('/UpdatePortfolio', function (req, res, next) {
 
-    //     owner: String,
-    //     symbol: String,
-    //     quantity: Number,
-    //     price: Number
-    //
     console.log(req.body.id);
 
     if(req.body.deleteStock === false){
@@ -128,23 +102,19 @@ router.post('/UpdatePortfolio', function (req, res, next) {
             return res.json(del);
         })
     }
-
-
-    //Stock.findByIdAndDelete(req.query.id)
-
 });
 
 
 router.get('/GetStock', function (req, res, next) {
-
-    console.log('Finding Stock: '+req.query.id);
-
-
     Stock.findOne({_id: req.query.id}, (err, stock) => {
+        res.send(stock);
+    });
+});
 
-            // console.log(stock);
-            res.send(stock);
-        });
+router.get('/GetCustomerName', function (req, res, next) {
+    customer.findOne({email: req.query.email}, function (err, account) {
+        return res.json(account.name);
+    });
 });
 
 module.exports = router;
