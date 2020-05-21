@@ -8,9 +8,6 @@ var bodyParser = require('body-parser');
 
 
 
-var indexRouter = require('./routes/api');
-// var usersRouter = require('./routes/api/users');
-var customerRoute = require('./routes/api/customer');
 var managerRoute = require('./routes/api/manager');
 var register = require('./routes/api/register');
 var login = require('./routes/api/login');
@@ -31,8 +28,6 @@ server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
 server.use('/api', indexRouter);
-// server.use('/api/users', usersRouter);
-//app.user('/customer', customerRoute);
 server.use('/api/manager', managerRoute);
 server.use('/api/register', register);
 server.use('/api/login', login);
