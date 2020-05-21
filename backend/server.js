@@ -27,7 +27,6 @@ server.use(express.static(path.join(__dirname, 'public')));
 server.use(bodyParser.urlencoded({ extended: false }));
 server.use(bodyParser.json());
 
-server.use('/api', indexRouter);
 server.use('/api/manager', managerRoute);
 server.use('/api/register', register);
 server.use('/api/login', login);
